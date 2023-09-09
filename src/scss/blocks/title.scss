@@ -1,0 +1,40 @@
+.h1_title {
+  color: var(--text-color);
+  font-size: 7.6rem;
+  font-weight: 400;
+  line-height: 1.18;
+  transition: color 0.25s;
+
+  @media ($tablet) {
+    font-size: 5.8rem;
+  }
+  @media ($tablet3) {
+    font-size: 4.2rem;
+  }
+}
+.h2_title {
+  color: var(--text-color);
+  font-size: 6.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @media ($tablet) {
+    font-size: 4.6rem;
+  }
+  @media ($tablet3) {
+    font-size: 3.4rem;
+    line-height: 1.35;
+  }
+}
+.h3_title {
+  font-size: 4.8rem;
+  line-height: 1.35;
+  transition: color 0.25s;
+  color: var(--text-color);
+  font-weight: 400;
+
+  @media ($tablet3) {
+    font-size: 2.6rem;
+    line-height: 1.32; /* 132.692% */
+  }
+}

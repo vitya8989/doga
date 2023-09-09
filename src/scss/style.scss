@@ -1,0 +1,134 @@
+@import "null";
+@import "variables";
+
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+$maxWidth: 1640;
+
+@mixin adaptive-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+	@media (max-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 375px) / #{$maxWidth}));
+	}
+	@media (min-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw  / #{$maxWidth}));
+	}
+}
+
+@import "fonts";
+
+html {
+	scroll-behavior: smooth;
+	font-size: 10px;
+}
+body {
+	font-family: FiraSans, sans-serif;
+	font-weight: 400;
+	background: #ffffff;
+	&.this--overflow {
+		overflow: hidden;
+	}
+	--text-color: #15212F;
+	--bg-color: #fff;
+	--alt-bg-color: #32B4DC;
+	--text-secondary-color: #82919B;
+	--active-link-color: #2890b0;
+	--grey-light: #c0c8cd;
+	--grey-default: #82919B;
+	--blue-default: #32B4DC;
+	--blue-dark: #2890b0;
+	--press-bg: #F8F8F9;
+	--vk-bg: #F8F8F9;
+	--wh-btn-color: #ffffff;
+	--press-form-bg: #82919B;
+	--press-detail-text: #15212F;
+
+	&.dark_theme {
+		--text-color: #fff;
+		--text-secondary-color: #fff;
+		--bg-color: #15212F;
+		--active-link-color: #ccecf6;
+		--press-bg: rgba(255, 255, 255, 0.05);
+		--vk-bg: rgba(255, 255, 255, 0.1);
+		--wh-btn-color: #82919B;
+		--alt-bg-color: #15212F;
+		--press-form-bg: #32B4DC;
+		--press-detail-text: #82919B;
+	}
+}
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&.this--overflow {
+		overflow-x: hidden;
+	}
+}
+.container {
+	max-width: 1640px;
+	margin: 0 auto;
+	padding: 0 30px;
+
+	@media ($tablet3) {
+		padding: 0 24px;
+	}
+}
+main {
+	flex: 1 0 auto;
+	background: var(--bg-color);
+	transition: background-color 0.25s;
+}
+
+@import "./blocks/btn";
+@import "./blocks/title";
+@import "./blocks/breadcrumbs";
+
+@import "../components/header/header";
+@import "../components/footer/footer";
+
+@import "../components/main/bottom_menu/bottom_menu";
+@import "../components/main/main_top/main_top";
+@import "../components/main/unique/unique";
+@import "../components/main/main_map/main_map";
+@import "../components/main/main_full_img/main_full_img";
+@import "../components/main/main_strategy/main_strategy";
+@import "../components/main/products/products";
+@import "../components/main/main_scheme/main_scheme";
+@import "../components/main/press_block/press_block";
+
+@import "../components/about/about_top/about_top";
+@import "../components/about/about_top_second/about_top_second";
+@import "../components/about/about_history/about_history";
+@import "../components/about/about_mission/about_mission";
+@import "../components/about/about_img_text/about_img_text";
+@import "../components/about/about_development/about_development";
+
+@import "../components/detail/detail_top/detail_top";
+@import "../components/detail/detail_scheme/detail_scheme";
+@import "../components/detail/detail_catalog/detail_catalog";
+
+@import "../components/contacts/contacts_top/contacts_top";
+@import "../components/contacts/contacts_form/contacts_form";
+@import "../components/contacts/contacts_map/contacts_map";
+@import "../components/contacts/contacts_form_success/contacts_form_success";
+
+@import "../components/press/press_top/press_top";
+@import "../components/press/press_catalog/press_catalog";
+@import "../components/press/press_form/press_form";
+
+@import "../components/press/press_detail/press_detail";
+
+@import "../components/responsibility/responsibility";
+
+@import "../components/tender/tender_top/tender_top";
+@import "../components/tender/tender_table/tender_table";

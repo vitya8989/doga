@@ -1,0 +1,165 @@
+.main_scheme {
+  padding: 110px 0 142px;
+
+  @media ($tablet) {
+    padding: 60px 0 80px;
+  }
+  @media ($tablet3) {
+    padding: 13px 0 62px;
+  }
+}
+.main_scheme__tag {
+  color: var(--text-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.56;
+  transition: color 0.25s;
+
+  @media ($tablet3) {
+    font-size: 1.4rem;
+  }
+}
+.main_scheme__title {
+  margin-top: 26px;
+
+  @media ($tablet3) {
+    margin-top: 12px;
+    font-size: 3.4rem;
+  }
+}
+.main_scheme__scheme {
+  margin: 26px auto 0;
+  max-width: 1500px;
+
+  @media ($tablet3) {
+    margin: 32px -15px 0;
+  }
+}
+.main_scheme__scheme_img {
+  padding-top: 52.9333333%;
+  position: relative;
+
+  .scheme_light,
+  .scheme_dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.25s, visibility 0.25s;
+  }
+
+  .scheme_light {
+    opacity: 1;
+    visibility: visible;
+  }
+  .scheme_dark {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dark_theme & {
+    .scheme_light {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .scheme_dark {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.main_scheme__scheme_label {
+  position: absolute;
+  color: var(--grey-default);
+  font-weight: 400;
+  line-height: 1;
+  @include adaptive-font(16, 7);
+
+  &.this--1 {
+    top: 10%;
+    left: 59.2%;
+  }
+  &.this--2 {
+    top: 34.5%;
+    left: 3.5%;
+  }
+  &.this--3 {
+    top: 34.5%;
+    left: 24%;
+  }
+  &.this--4 {
+    top: 34.5%;
+    left: 77.5%;
+  }
+  &.this--5 {
+    top: 59.5%;
+    left: 16%;
+  }
+  &.this--6 {
+    top: 59.5%;
+    left: 39.5%;
+  }
+}
+.main_scheme__scheme_count {
+  position: absolute;
+  color: var(--blue-default);
+  font-weight: 500;
+  line-height: 1;
+  @include adaptive-font(50, 14);
+
+  &.this--1 {
+    top: 77.5%;
+    left: 9.8%;
+  }
+
+  &.this--2 {
+    top: 77.5%;
+    left: 29.4%;
+  }
+
+  &.this--3 {
+    top: 77.5%;
+    left: 48.4%;
+  }
+
+  &.this--4 {
+    top: 77.5%;
+    left: 68.3%;
+  }
+
+  &.this--5 {
+    top: 77.5%;
+    left: 88%;
+  }
+}
+.main_scheme__scheme_product {
+  position: absolute;
+  color: var(--blue-default);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  @include adaptive-font(22, 6);
+
+  &.this--1 {
+    top: 93.4%;
+    left: 11%;
+  }
+  &.this--2 {
+    top: 93.4%;
+    left: 29.5%;
+  }
+  &.this--3 {
+    top: 93.4%;
+    left: 48.6%;
+  }
+  &.this--4 {
+    top: 93.4%;
+    left: 69.3%;
+  }
+  &.this--5 {
+    top: 93.4%;
+    left: 88.8%;
+  }
+}

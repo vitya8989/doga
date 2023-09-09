@@ -1,0 +1,161 @@
+.press_form {
+  background: var(--press-form-bg);
+  position: relative;
+  padding: 100px 0 100px;
+  overflow: hidden;
+
+  @media ($tablet3) {
+    padding: 110px 0 80px;
+  }
+}
+.press_form__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 814px;
+  height: 100%;
+  object-fit: cover;
+
+  @media ($tablet3) {
+    display: none;
+  }
+}
+.press_form__bg_mob {
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 100%;
+  display: none;
+
+  @media ($tablet3) {
+    display: block;
+  }
+}
+.press_form__content {
+  width: 50%;
+  margin-left: auto;
+  display: none;
+  position: relative;
+  z-index: 2;
+  min-height: 500px;
+  align-items: center;
+
+  @media ($desktop) {
+    width: 75%;
+  }
+  @media ($tablet3) {
+    width: auto;
+    min-height: 344px;
+  }
+
+  &.active {
+    display: flex;
+
+    @media ($tablet3) {
+     display: block;
+    }
+  }
+}
+.press_form__form {
+  max-width: 511px;
+}
+.press_form__title {
+  color: #FFF;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.35;
+
+  @media ($tablet3) {
+    font-size: 3.4rem;
+  }
+}
+.press_form__input_wr {
+  margin-top: 76px;
+  position: relative;
+  @media ($tablet3) {
+    margin-top: 40px;
+  }
+}
+.press_form__input_placeholder {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.56;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  transition: top 0.15s, color 0.25s;
+
+  &.focus {
+    top: 0;
+  }
+  &.error {
+    color: #DC3232;
+  }
+}
+.press_form__input {
+  width: 100%;
+  color: #ffffff;
+  background: transparent;
+  padding: 25px 0 5px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.56;
+  border-bottom: 1px solid var(--grey-light);
+  transition: border 0.25s;
+
+  &:focus {
+    border-bottom: 1px solid var(--blue-default) !important;
+  }
+
+  &.error {
+    color: #DC3232;
+    border-bottom: 1px solid #DC3232 !important;
+  }
+
+  &.error + .press_form__input_message {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.press_form__input_message {
+  position: absolute;
+  bottom: -19px;
+  color: #DE2727;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+.press_form__bottom {
+  margin-top: 42px;
+  display: flex;
+  align-items: center;
+
+  @media ($mobile) {
+    margin-top: 50px;
+    display: block;
+  }
+}
+.press_form__submit_text {
+  margin-left: 34px;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.25;
+
+  @media ($mobile) {
+    margin-left: 0;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+}
+.press_form__submit {
+  width: 144px;
+
+  @media ($mobile) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  &.this--center {
+    justify-content: center;
+  }
+}
+.breadcrumbs__link {
+  color: var(--grey-default);
+  .this--wh & {
+    color: #ffffff;
+
+    &::after {
+      color: #ffffff
+    }
+  }
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  position: relative;
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  &::after {
+    content: ' /';
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  &.this--disabled {
+    &::after {
+      display: none;
+    }
+  }
+}

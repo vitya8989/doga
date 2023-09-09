@@ -1,0 +1,165 @@
+.tender_table {
+  padding: 92px 0 270px;
+
+  @media ($desktop) {
+    padding: 92px 0 140px;
+  }
+  @media ($tablet) {
+    padding: 54px 0 70px;
+  }
+  @media ($tablet3) {
+    padding: 54px 0 15px;
+  }
+}
+.tender_table__title {
+  text-align: center;
+
+  @media ($tablet3) {
+    font-size: 2.6rem;
+    line-height: 1.32;
+  }
+}
+.tender_table__search {
+  margin-top: 96px;
+  position: relative;
+
+  @media ($tablet) {
+    margin-top: 70px;
+  }
+  @media ($tablet3) {
+    margin-top: 44px;
+  }
+}
+.tender_table__search_input {
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px 20px 60px;
+  border-radius: 43px;
+  border: 1px solid var(--grey-light);
+  color: var(--text-color);
+  background: var(--bg-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.56;
+  transition: color 0.25s, background 0.25s, border 0.25s;
+
+  @media ($tablet3) {
+    padding: 15px 10px 15px 50px;
+  }
+
+  &::placeholder {
+    color: var(--grey-default, #82919B);
+  }
+
+  &:hover {
+    @media #{$mouse-device} {
+      border: 1px solid var(--grey-default, #82919B);
+    }
+  }
+  &:focus {
+    border: 1px solid var(--blue-default, #32B4DC) !important;
+  }
+}
+.tender_table__search_clear {
+  position: absolute;
+  top: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  left: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+
+  @media ($tablet3) {
+    left: 15px;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 0.5px);
+    left: 7px;
+    height: 1px;
+    width: 15px;
+    background: var(--text-color);
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after {
+    transform: rotate(45deg);
+  }
+}
+.tender_table__table_wr {
+  margin-top: 28px;
+
+  @media ($tablet3) {
+    overflow-x: auto;
+    margin: 31px -24px 0;
+    padding: 0 24px;
+
+    &::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(217, 217, 217, 0.31);
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #32B4DC;
+      border-radius: 20px;
+    }
+  }
+}
+.tender_table__table {
+  @media ($tablet3) {
+    width: 707px;
+  }
+}
+.tender .even, .tender tr.even, .tender tr.even td {
+  .dark_theme & {
+    background-color: #15212F;
+    color: #ffffff;
+    transition: color 0.25s, background-color 0.25s;
+    a {
+      color: #ffffff;
+      transition: color 0.25s;
+    }
+  }
+}
+.tender .baseTable th, .tender .baseTable .thlike {
+  .dark_theme & {
+    background-color: #15212F;
+    color: #ffffff;
+    transition: color 0.25s, background-color 0.25s;
+  }
+}
+.tender .baseTable {
+    border-top: 1px solid #ffffff;
+}
+.tender .odd, .tender tr.odd, .tender tr.odd td {
+  .dark_theme & {
+    background-color: #c8c8c8;
+    transition: background-color 0.25s;
+  }
+}
+.pager a {
+  .dark_theme & {
+    color: #ffffff;
+    transition: color 0.25s;
+  }
+}
+.page-num {
+  .dark_theme & {
+    color: #ffffff;
+    transition: color 0.25s;
+  }
+}

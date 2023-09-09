@@ -1,0 +1,426 @@
+.btn {
+  border-radius: 33px;
+  transition: border 0.25s, background-color 0.25s, color 0.25s;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  @media ($tablet) {
+    font-size: 1.4rem;
+  }
+  &.this--icon {
+    svg {
+      width: 24px;
+      height: 24px;
+      path {
+        transition: fill 0.25s, stroke 0.25s;
+      }
+    }
+
+    &.this--icon_before {
+      svg {
+        margin-right: 10px;
+      }
+    }
+    &.this--base {
+
+      &.this--fill {
+        &:hover,
+        &:focus-visible {
+          @media #{$mouse-device} {
+            svg {
+              path {
+                fill: #FFF;
+              }
+            }
+          }
+        }
+        &:active {
+          svg {
+            path {
+              fill: #FFF;
+            }
+          }
+        }
+        .dark_theme & {
+          svg {
+            path {
+              fill: #15212F;
+            }
+          }
+        }
+      }
+      &.this--stroke {
+        &:hover,
+        &:focus-visible {
+          @media #{$mouse-device} {
+            svg {
+              path {
+                stroke: #FFF;
+              }
+            }
+          }
+        }
+        &:active {
+          svg {
+            path {
+              stroke: #FFF;
+            }
+          }
+        }
+        .dark_theme & {
+          svg {
+            path {
+              stroke: #15212F;
+            }
+          }
+        }
+      }
+
+      &:hover,
+      &:focus-visible {
+        @media #{$mouse-device} {
+          background: #32B4DC;
+          border: 1px solid #32B4DC;
+        }
+      }
+    }
+    &.this--secondary {
+
+      &.this--fill {
+        &:hover,
+        &:focus-visible {
+          @media #{$mouse-device} {
+            svg {
+              path {
+                fill: #FFF;
+              }
+            }
+          }
+        }
+        &:active {
+          svg {
+            path {
+              fill: #FFF;
+            }
+          }
+        }
+        .dark_theme & {
+          svg {
+            path {
+              fill: #FFF;
+            }
+          }
+        }
+      }
+      &.this--stroke {
+        &:hover,
+        &:focus-visible {
+          @media #{$mouse-device} {
+            svg {
+              path {
+                stroke: #FFF;
+              }
+            }
+          }
+        }
+        &:active {
+          svg {
+            path {
+              stroke: #FFF;
+            }
+          }
+        }
+        .dark_theme & {
+          svg {
+            path {
+              stroke: #FFF;
+            }
+          }
+        }
+      }
+      &:hover,
+      &:focus-visible {
+        @media #{$mouse-device} {
+          background: #32B4DC;
+          border: 1px solid #32B4DC;
+        }
+      }
+      &:active {
+        background: #2890b0!important;
+        border: 1px solid #2890b0!important;
+      }
+    }
+  }
+
+  &.this--secondary {
+    border: 1px solid var(--text-secondary-color);
+    color: var(--text-secondary-color);
+
+    &:hover,
+    &:focus-visible {
+      @media #{$mouse-device} {
+        background: #32B4DC;
+        color: #FFF;
+        border: 1px solid #32B4DC;
+      }
+    }
+    &:active {
+      background: #2890b0!important;
+      color: #FFF;
+      border: 1px solid #2890b0!important;
+    }
+  }
+
+  &.this--base {
+    border: 1px solid var(--text-color);
+    color: var(--bg-color);
+    background: var(--text-color);
+
+    &:hover,
+    &:focus-visible {
+      @media #{$mouse-device} {
+        background: #32B4DC;
+        border: 1px solid #32B4DC;
+      }
+    }
+    &:active {
+      background: #2890b0!important;
+      border: 1px solid #2890b0!important;
+    }
+  }
+
+  &.this--large {
+    height: 50px;
+    padding: 11px 35px;
+  }
+}
+
+.text_btn {
+  transition: color 0.25s;
+
+  &:hover,
+  &:focus-visible {
+    @media #{$mouse-device} {
+      color: #32B4DC;
+    }
+  }
+  &:active {
+    color: var(--active-link-color)!important;
+  }
+}
+
+.icon_btn {
+  border-radius: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.25s, background-color 0.25s;
+  cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    path {
+      transition: fill 0.25s, stroke 0.25s;
+    }
+  }
+  &.this--small {
+    width: 36px;
+    height: 36px;
+
+    @media ($tablet3) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &.this--large {
+    width: 50px;
+    height: 50px;
+
+    @media ($tablet3) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  &.this--base {
+    background: var(--text-color);
+
+    &.this--fill {
+      &:hover,
+      &:focus-visible {
+        @media #{$mouse-device} {
+          svg {
+            path {
+              fill: #FFF;
+            }
+          }
+        }
+      }
+      &:active {
+        svg {
+          path {
+            fill: #FFF;
+          }
+        }
+      }
+      .dark_theme & {
+        svg {
+          path {
+            fill: #15212F;
+          }
+        }
+      }
+    }
+    &.this--stroke {
+      &:hover,
+      &:focus-visible {
+        @media #{$mouse-device} {
+          svg {
+            path {
+              stroke: #FFF;
+            }
+          }
+        }
+      }
+      &:active {
+        svg {
+          path {
+            stroke: #FFF;
+          }
+        }
+      }
+      .dark_theme & {
+        svg {
+          path {
+            stroke: #15212F;
+          }
+        }
+      }
+    }
+
+    &.this--black {
+      .dark_theme & {
+        background: var(--bg-color);
+
+        svg {
+          path {
+            fill: #FFF;
+          }
+        }
+        &:hover,
+        &:focus-visible {
+          @media #{$mouse-device} {
+            background: #32B4DC;
+            border: 1px solid #32B4DC;
+          }
+        }
+      }
+    }
+    &:hover,
+    &:focus-visible {
+      @media #{$mouse-device} {
+        background: #32B4DC;
+        border: 1px solid #32B4DC;
+      }
+    }
+    &:active {
+      background: #2890b0!important;
+      border: 1px solid #2890b0!important;
+    }
+  }
+  &.this--secondary {
+    border: 1px solid var(--text-secondary-color);
+
+    &.this--fill {
+      &:hover,
+      &:focus-visible {
+        @media #{$mouse-device} {
+          svg {
+            path {
+              fill: #FFF;
+            }
+          }
+        }
+      }
+      &:active {
+        svg {
+          path {
+            fill: #FFF;
+          }
+        }
+      }
+      .dark_theme & {
+        svg {
+          path {
+            fill: #FFF;
+          }
+        }
+      }
+    }
+    &.this--stroke {
+      &:hover,
+      &:focus-visible {
+        @media #{$mouse-device} {
+          svg {
+            path {
+              stroke: #FFF;
+            }
+          }
+        }
+      }
+      &:active {
+        svg {
+          path {
+            stroke: #FFF;
+          }
+        }
+      }
+      .dark_theme & {
+        svg {
+          path {
+            stroke: #FFF;
+          }
+        }
+      }
+    }
+    &.this--wh {
+      border: 1px solid var(--wh-btn-color);
+
+      .dark_theme & {
+        svg {
+          path {
+            fill: var(--wh-btn-color);
+          }
+        }
+      }
+    }
+    &.this--gray {
+      border: 1px solid var(--grey-default);
+
+      .dark_theme & {
+        svg {
+          path {
+            fill: var(--grey-default);
+          }
+        }
+      }
+    }
+    &:hover,
+    &:focus-visible {
+      @media #{$mouse-device} {
+        background: #32B4DC;
+        border: 1px solid #32B4DC;
+      }
+    }
+    &:active {
+      background: #2890b0!important;
+      border: 1px solid #2890b0!important;
+    }
+  }
+}

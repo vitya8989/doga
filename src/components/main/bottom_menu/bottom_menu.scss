@@ -1,0 +1,89 @@
+.bottom_menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  background: linear-gradient(0deg, rgba(248, 253, 255, 0.44) 0%, rgba(248, 253, 255, 0.44) 100%), rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(40px);
+  transition: background 0.25s, opacity 0.25s, visibility 0.25s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media ($tablet) {
+    display: none;
+  }
+
+  .dark_theme & {
+    background: linear-gradient(0deg, rgba(54, 66, 79, 0.35) 0%, rgba(54, 66, 79, 0.35) 100%), rgba(21, 33, 47, 0.23);
+  }
+
+  .container {
+    max-width: 1440px;
+  }
+}
+.bottom_menu__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.bottom_menu__anchors {
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  li {
+    padding: 0 50px;
+    position: relative;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid var(--text-secondary-color);
+
+    @media ($desktop) {
+      padding: 0 40px;
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+.bottom_menu__anchor {
+  color: var(--text-secondary-color);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.56;
+
+  &.active {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 9px);
+      left: -29px;
+      width: 20px;
+      height: 18px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21' height='19' viewBox='0 0 21 19' fill='none'%3E%3Cpath d='M5.4707 3.3275L6.9457 2L15.279 9.5L6.9457 17L5.4707 15.6725L12.329 9.5L5.4707 3.3275Z' fill='%2332B4DC'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+  }
+}
+
+.bottom_menu__burger {
+  display: flex;
+  align-items: center;
+}
+.bottom_menu__burger_text {
+  color: var(--text-secondary-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.56;
+  margin-right: 19px;
+}

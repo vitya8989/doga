@@ -1,0 +1,134 @@
+.about_top_second {
+  padding: 278px 0 200px;
+  background: var(--alt-bg-color);
+  position: relative;
+  transition: background 0.25s;
+
+  @media ($tablet) {
+    padding: 113px 0 90px;
+  }
+  @media ($tablet3) {
+    padding: 263px 0 90px;
+  }
+}
+.about_top_second__content {
+  display: flex;
+  z-index: 2;
+  position: relative;
+
+  @media ($tablet) {
+    display: block;
+  }
+}
+.about_top_second__title {
+  color: #ffffff;
+  width: 819px;
+
+  @media ($desktopBig) {
+    width: 50%;
+    font-size: 4.6rem;
+  }
+  @media ($tablet) {
+    width: auto;
+  }
+}
+.about_top_second__text {
+  color: #ffffff;
+  margin-left: 110px;
+  width: calc(100% - 929px);
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.36;
+
+  @media ($desktopBig) {
+    margin-left: 60px;
+    width: calc(50% - 60px);
+  }
+  @media ($tablet) {
+    width: auto;
+    margin-left: 0;
+    margin-top: 42px;
+  }
+  @media ($tablet3) {
+    font-size: 1.6rem;
+  }
+}
+.about_top_second__wrapper_img {
+  top: -168px;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 1005px;
+  height: 831px;
+
+  @media ($desktopSuperBig) {
+    height: 661px;
+    width: 800px;
+  }
+  @media ($tablet) {
+    top: -300px;
+    height: 445px;
+    width: 500px;
+  }
+  @media ($tablet3) {
+    height: 334px;
+    width: 375px;
+    top: 0;
+  }
+}
+.about_top_second__wrapper_img_svg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+
+  &.this--mobile {
+    display: none;
+  }
+
+  @media ($tablet) {
+    &.this--mobile {
+      display: block;
+    }
+    &.this--desktop {
+      display: none;
+    }
+  }
+
+  .svg_bg {
+    transition: fill 0.25s;
+    fill: var(--alt-bg-color);
+  }
+}
+.about_top_second__wrapper_img_container {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 100%;
+}
+.about_top_second__wrapper_img_img {
+  position: relative;
+  padding-top: 82.6%;
+  overflow: hidden;
+
+  @media ($desktopSuperBig) {
+    padding-top: 82.4%;
+  }
+  @media ($tablet) {
+    padding-top: 88.6%;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    object-fit: cover;
+    width: calc(100% - 2px);
+    height: 130%;
+    transition: filter 0.25s;
+
+    .dark_theme & {
+      filter: saturate(0.1) contrast(1.5);
+    }
+  }
+}

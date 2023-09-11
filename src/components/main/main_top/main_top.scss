@@ -35,6 +35,7 @@
     color: var(--text-secondary-color);
     font-size: 2.2rem;
     line-height: 1.36;
+    transition: color 0.25s;
 
     @media ($tablet3) {
       margin-bottom: 8px;

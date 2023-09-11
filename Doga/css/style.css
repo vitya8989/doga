@@ -1498,6 +1498,8 @@ main {
   color: var(--text-secondary-color);
   font-size: 2.2rem;
   line-height: 1.36;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
 }
 
 .main_top__list li:last-child {

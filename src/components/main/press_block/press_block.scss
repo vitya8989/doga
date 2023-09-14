@@ -193,11 +193,13 @@
   font-weight: 700;
   line-height: 1.2;
   transition: color 0.25s;
+  margin-bottom: 7px;
   @media ($tablet) {
     color: #FFF;
   }
 
   @media ($tablet3) {
     font-size: 1.4rem;
+    margin-bottom: 2px;
   }
 }

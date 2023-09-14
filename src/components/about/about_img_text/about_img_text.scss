@@ -68,14 +68,18 @@
 
   img {
     width: 408px;
+    margin-top: 9px;
     @media ($desktopBig) {
       width: 320px;
+      margin-top: 7px;
     }
     @media ($tablet) {
       width: 270px;
+      margin-top: 4px;
     }
     @media ($mobile) {
       width: 189px;
+      margin-top: 1px;
     }
     &.this--dark {
       display: none;

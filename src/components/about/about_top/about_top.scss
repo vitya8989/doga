@@ -138,17 +138,17 @@
 }
 .about_top__wrapper_img_container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 1px);
 }
 .about_top__wrapper_img_img {
   position: relative;
-  padding-top: 55.84%;
+  padding-top: 55.45%;
   overflow: hidden;
 
   @media ($desktopSuperBig) {
-    padding-top: 55.7%;
+    padding-top: 55.5%;
   }
 
   @media ($tablet) {

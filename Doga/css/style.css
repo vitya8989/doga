@@ -1915,7 +1915,8 @@ main {
 }
 
 .strategy__slider {
-  margin-top: 70px;
+  margin-top: -270px;
+  padding-top: 340px;
 }
 
 .strategy__slider_slide.swiper-slide {
@@ -2217,10 +2218,10 @@ main {
 .products_slide__img {
   position: relative;
   padding-top: 31.4815%;
-  -webkit-transition: opacity 0.6s, visibility 0.6s, -webkit-transform 0.6s;
-  transition: opacity 0.6s, visibility 0.6s, -webkit-transform 0.6s;
-  transition: transform 0.6s, opacity 0.6s, visibility 0.6s;
-  transition: transform 0.6s, opacity 0.6s, visibility 0.6s, -webkit-transform 0.6s;
+  -webkit-transition: opacity 1.2s, visibility 1.2s, -webkit-transform 1.2s;
+  transition: opacity 1.2s, visibility 1.2s, -webkit-transform 1.2s;
+  transition: transform 1.2s, opacity 1.2s, visibility 1.2s;
+  transition: transform 1.2s, opacity 1.2s, visibility 1.2s, -webkit-transform 1.2s;
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateX(-100%);
@@ -3086,18 +3087,9 @@ main {
 
 .about_development__sticky_block {
   min-height: 992px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: sticky;
   top: 120px;
+  padding-top: 114px;
 }
 
 .about_development__arrow {
@@ -5430,6 +5422,11 @@ ymaps[class*=ground-pane] {
     padding: 150px 0 120px;
   }
 
+  .strategy__slider {
+    margin-top: -200px;
+    padding-top: 270px;
+  }
+
   .products {
     padding: 140px 0 187px;
     -webkit-clip-path: polygon(100% 0, 100% 88%, 50% 100%, 0 88%, 0 0);
@@ -6054,6 +6051,7 @@ ymaps[class*=ground-pane] {
     min-height: 0;
     top: 0;
     position: relative;
+    padding-top: 0;
   }
 
   .about_development__arrow {
@@ -6621,7 +6619,8 @@ ymaps[class*=ground-pane] {
   }
 
   .strategy__slider {
-    margin-top: 42px;
+    margin-top: -180px;
+    padding-top: 222px;
   }
 
   .strategy__slider_slide.swiper-slide {
@@ -6921,6 +6920,13 @@ ymaps[class*=ground-pane] {
 
   .about_development {
     padding-bottom: 50px;
+  }
+
+  .about_development__arrow {
+    padding-top: 96%;
+    width: calc(100% + 48px);
+    background: url("../img/about/about_development/arrow_mob.png") center bottom/contain no-repeat;
+    left: -30px;
   }
 
   .about_development__title {
@@ -7857,6 +7863,11 @@ ymaps[class*=ground-pane] {
 @media (max-width: 767px){
 
   .webp .about_history{ background: url(../img/about/about_history/about_history_bg_img.webp) left top/100% auto no-repeat; }
+}
+
+@media (max-width: 767px){
+
+  .webp .about_development__arrow{ background: url(../img/about/about_development/arrow_mob.webp) center bottom/contain no-repeat; }
 }
 
 @media (max-width: 767px){

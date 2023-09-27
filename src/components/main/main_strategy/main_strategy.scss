@@ -60,9 +60,16 @@
   }
 }
 .strategy__slider {
-  margin-top: 70px;
+  margin-top: -270px;
+  padding-top: 340px;
+
+  @media ($desktop) {
+    margin-top: -200px;
+    padding-top: 270px;
+  }
   @media ($tablet3) {
-    margin-top: 42px;
+    margin-top: -180px;
+    padding-top: 222px;
   }
 }
 .strategy__slider_slide.swiper-slide {

@@ -1,15 +1,20 @@
-const mainMapContent = document.querySelector('.js_main_map_content');
+const mainMap = document.querySelector('.main_map');
+const mainFullImg = document.querySelector('.main_full_img');
 const mainTopTitle = document.querySelector('.main_top__title');
-if (mainMapContent && mainTopTitle) {
-    const mainMapTitleWr = mainMapContent.querySelector('.main_map__title_wr');
+if (mainMap && mainTopTitle) {
+    const mainMapContent = mainMap.querySelector('.js_main_map_content');
     let topOfMainMapContent = mainMapContent.getBoundingClientRect().top;
 
     let callback = function(entries, observer){
         entries.forEach(entry => {
-            if (entry.target === mainMapTitleWr) {
+            if (entry.target === mainFullImg) {
                 if (entry.isIntersecting) {
                     if (topOfMainMapContent > entry.boundingClientRect.top && !mainMapContent.classList.contains('active_animation')) {
+                        disableScroll();
                         mainMapContent.classList.add('active_animation');
+                        setTimeout(() => {
+                            enableScroll();
+                        }, 3700);
                     }
                 } else {
                     topOfMainMapContent = entry.boundingClientRect.top;
@@ -24,9 +29,9 @@ if (mainMapContent && mainTopTitle) {
     }
 
     let observer = new IntersectionObserver(callback, {
-        threshold: 1,
+        threshold: 0.01,
     });
 
-    observer.observe(mainMapTitleWr);
+    observer.observe(mainFullImg);
     observer.observe(mainTopTitle);
 }

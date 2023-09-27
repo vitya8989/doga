@@ -1,3 +1,38 @@
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+var supportsPassive = false;
+try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch(e) {}
+
+var wheelOpt = supportsPassive ? { passive: false } : false;
+var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
 
 const header = document.querySelector('.js_header');
 
@@ -210,18 +245,23 @@ if (uniqueSlider && uniqueTitleSlider) {
         uniqueSliderInstance.updateAutoHeight();
     });
 };
-const mainMapContent = document.querySelector('.js_main_map_content');
+const mainMap = document.querySelector('.main_map');
+const mainFullImg = document.querySelector('.main_full_img');
 const mainTopTitle = document.querySelector('.main_top__title');
-if (mainMapContent && mainTopTitle) {
-    const mainMapTitleWr = mainMapContent.querySelector('.main_map__title_wr');
+if (mainMap && mainTopTitle) {
+    const mainMapContent = mainMap.querySelector('.js_main_map_content');
     let topOfMainMapContent = mainMapContent.getBoundingClientRect().top;
 
     let callback = function(entries, observer){
         entries.forEach(entry => {
-            if (entry.target === mainMapTitleWr) {
+            if (entry.target === mainFullImg) {
                 if (entry.isIntersecting) {
                     if (topOfMainMapContent > entry.boundingClientRect.top && !mainMapContent.classList.contains('active_animation')) {
+                        disableScroll();
                         mainMapContent.classList.add('active_animation');
+                        setTimeout(() => {
+                            enableScroll();
+                        }, 3700);
                     }
                 } else {
                     topOfMainMapContent = entry.boundingClientRect.top;
@@ -236,10 +276,10 @@ if (mainMapContent && mainTopTitle) {
     }
 
     let observer = new IntersectionObserver(callback, {
-        threshold: 1,
+        threshold: 0.01,
     });
 
-    observer.observe(mainMapTitleWr);
+    observer.observe(mainFullImg);
     observer.observe(mainTopTitle);
 };
 const strategySlider = document.querySelector('.js_strategy_slider');
@@ -729,3 +769,4 @@ if (document.querySelector('.trading-list')) {
 }
 
 ;
+

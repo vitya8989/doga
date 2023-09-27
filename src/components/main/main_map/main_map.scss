@@ -1,29 +1,38 @@
 .main_map {
-  overflow: hidden;
-  padding: 40px 0 60px;
+  position: relative;
+  margin: 40px 0 60px;
+  .container {
+    height: 3000px;
+    max-width: none;
+    padding: 0;
+  }
 
   @media ($tablet3) {
     padding: 20px 0 40px;
+  }
+}
+.main_map__content {
+  position: sticky;
+  top: 80px;
+  height: 100vh;
+  overflow: hidden;
+
+  @media ($tablet3) {
+    padding-top: 100px;
   }
 }
 .main_map__content.active_animation {
   .main_map__map {
     &.this--one {
       opacity: 0;
-      visibility: hidden;
-      transform-origin: 19.63% 64.25%;
       transform: scale(9.5);
       transition: visibility 2.5s ease 0.8s, opacity 2.5s ease 0.8s, transform 3s 0.5s;
-      @media (max-width: 740px) {
-        transform-origin: 22.56% 64.15%;
-      }
     }
     &.this--two {
       opacity: 1;
-      visibility: visible;
       transition: visibility 3s ease 2.7s, opacity 3s ease 2.7s;
       @media (max-width: 740px) {
-        transform: translateX(-165px);
+        transform: translateX(-125px);
       }
     }
   }
@@ -31,20 +40,18 @@
   .main_map__title {
     &.this--one {
       opacity: 0;
-      visibility: hidden;
       transition: visibility 0s 4.5s, opacity 0s 4.5s, transform 4s ease 1.5s;
       transform: translateY(-1500px);
     }
     &.this--two {
       transform: translateY(0);
       opacity: 1;
-      visibility: visible;
       transition: visibility 4s 2.5s, opacity 4s 2.5s, transform 2s ease 1.3s;
     }
   }
 }
 .main_map__maps {
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   max-width: 1172px;
 
   @media ($tablet3) {
@@ -66,6 +73,14 @@
   width: 100%;
   height: 100%;
 
+  &.this--one {
+    transform-origin: 19.63% 64.25%;
+
+    @media (max-width: 740px) {
+      transform-origin: 21.86% 64.15%;
+    }
+  }
+
   img {
     position: absolute;
     width: 100%;
@@ -76,24 +91,32 @@
   }
   &.this--two {
     opacity: 0;
-    visibility: hidden;
+    @media (max-width: 740px) {
+      transform: translateX(-125px);
+    }
   }
 }
 .main_map__title_wr {
   position: relative;
 }
 .main_map__title.h1_title {
+  padding-left: calc((100vw - 1640px) / 2 + 19px);
+
+  @media (max-width: 1662px) {
+    padding-left: 30px;
+  }
+  @media ($tablet) {
+    padding-left: 24px;
+  }
   @media ($tablet3) {
     font-size: 3.4rem;
   }
-
   &.this--two {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(1500px);
     opacity: 0;
-    visibility: hidden;
+    transform: translateY(1500px);
   }
 }
 

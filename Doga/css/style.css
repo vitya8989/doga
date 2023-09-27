@@ -1721,16 +1721,25 @@ main {
 }
 
 .main_map {
+  position: relative;
+  margin: 40px 0 60px;
+}
+
+.main_map .container {
+  height: 3000px;
+  max-width: none;
+  padding: 0;
+}
+
+.main_map__content {
+  position: sticky;
+  top: 80px;
+  height: 100vh;
   overflow: hidden;
-  padding: 40px 0 60px;
 }
 
 .main_map__content.active_animation .main_map__map.this--one {
   opacity: 0;
-  visibility: hidden;
-  -webkit-transform-origin: 19.63% 64.25%;
-      -ms-transform-origin: 19.63% 64.25%;
-          transform-origin: 19.63% 64.25%;
   -webkit-transform: scale(9.5);
       -ms-transform: scale(9.5);
           transform: scale(9.5);
@@ -1742,14 +1751,12 @@ main {
 
 .main_map__content.active_animation .main_map__map.this--two {
   opacity: 1;
-  visibility: visible;
   -webkit-transition: visibility 3s ease 2.7s, opacity 3s ease 2.7s;
   transition: visibility 3s ease 2.7s, opacity 3s ease 2.7s;
 }
 
 .main_map__content.active_animation .main_map__title.this--one {
   opacity: 0;
-  visibility: hidden;
   -webkit-transition: visibility 0s 4.5s, opacity 0s 4.5s, -webkit-transform 4s ease 1.5s;
   transition: visibility 0s 4.5s, opacity 0s 4.5s, -webkit-transform 4s ease 1.5s;
   transition: visibility 0s 4.5s, opacity 0s 4.5s, transform 4s ease 1.5s;
@@ -1764,7 +1771,6 @@ main {
       -ms-transform: translateY(0);
           transform: translateY(0);
   opacity: 1;
-  visibility: visible;
   -webkit-transition: visibility 4s 2.5s, opacity 4s 2.5s, -webkit-transform 2s ease 1.3s;
   transition: visibility 4s 2.5s, opacity 4s 2.5s, -webkit-transform 2s ease 1.3s;
   transition: visibility 4s 2.5s, opacity 4s 2.5s, transform 2s ease 1.3s;
@@ -1772,7 +1778,7 @@ main {
 }
 
 .main_map__maps {
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   max-width: 1172px;
 }
 
@@ -1789,6 +1795,12 @@ main {
   height: 100%;
 }
 
+.main_map__map.this--one {
+  -webkit-transform-origin: 19.63% 64.25%;
+      -ms-transform-origin: 19.63% 64.25%;
+          transform-origin: 19.63% 64.25%;
+}
+
 .main_map__map img {
   position: absolute;
   width: 100%;
@@ -1801,22 +1813,24 @@ main {
 
 .main_map__map.this--two {
   opacity: 0;
-  visibility: hidden;
 }
 
 .main_map__title_wr {
   position: relative;
 }
 
+.main_map__title.h1_title {
+  padding-left: calc((100vw - 1640px) / 2 + 19px);
+}
+
 .main_map__title.h1_title.this--two {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
   -webkit-transform: translateY(1500px);
       -ms-transform: translateY(1500px);
           transform: translateY(1500px);
-  opacity: 0;
-  visibility: hidden;
 }
 
 .main_full_img {
@@ -5091,6 +5105,10 @@ ymaps[class*=ground-pane] {
 }
 
 @media (max-width: 1662px) {
+  .main_map__title.h1_title {
+    padding-left: 30px;
+  }
+
   .products__slider_pagination {
     left: 435px;
   }
@@ -5778,6 +5796,10 @@ ymaps[class*=ground-pane] {
   .unique {
     margin-top: 20px;
     padding-top: 100px;
+  }
+
+  .main_map__title.h1_title {
+    padding-left: 24px;
   }
 
   .main_full_img__wrapper_img_img img {
@@ -6564,6 +6586,10 @@ ymaps[class*=ground-pane] {
 
   .main_map {
     padding: 20px 0 40px;
+  }
+
+  .main_map__content {
+    padding-top: 100px;
   }
 
   .main_map__maps {
@@ -7387,20 +7413,26 @@ ymaps[class*=ground-pane] {
 }
 
 @media (max-width: 740px) {
-  .main_map__content.active_animation .main_map__map.this--one {
-    -webkit-transform-origin: 22.56% 64.15%;
-        -ms-transform-origin: 22.56% 64.15%;
-            transform-origin: 22.56% 64.15%;
-  }
-
   .main_map__content.active_animation .main_map__map.this--two {
-    -webkit-transform: translateX(-165px);
-        -ms-transform: translateX(-165px);
-            transform: translateX(-165px);
+    -webkit-transform: translateX(-125px);
+        -ms-transform: translateX(-125px);
+            transform: translateX(-125px);
   }
 
   .main_map__maps {
     width: 670px;
+  }
+
+  .main_map__map.this--one {
+    -webkit-transform-origin: 21.86% 64.15%;
+        -ms-transform-origin: 21.86% 64.15%;
+            transform-origin: 21.86% 64.15%;
+  }
+
+  .main_map__map.this--two {
+    -webkit-transform: translateX(-125px);
+        -ms-transform: translateX(-125px);
+            transform: translateX(-125px);
   }
 }
 

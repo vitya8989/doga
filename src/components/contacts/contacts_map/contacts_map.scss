@@ -1,10 +1,7 @@
 .contacts_map_section {
-  height: 829px;
+  height: 600px;
   position: relative;
   overflow: hidden;
-  @media ($desktopBig) {
-    height: 629px;
-  }
   @media ($tablet) {
     height: 491px;
   }
@@ -41,7 +38,7 @@ ymaps[class*=ground-pane]{
 }
 .contacts_map__zoom_items {
   position: absolute;
-  top: 722px;
+  top: 493px;
   right: calc((100vw - 1640px) / 2);
   display: flex;
   z-index: 2;
@@ -50,9 +47,6 @@ ymaps[class*=ground-pane]{
   justify-content: space-between;
   @media (max-width: 1662px) {
     right: 30px;
-  }
-  @media ($desktopBig) {
-    top: 522px;
   }
   @media ($tablet) {
     display: none;

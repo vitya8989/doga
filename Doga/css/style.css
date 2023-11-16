@@ -4122,7 +4122,7 @@ main {
 }
 
 .contacts_map_section {
-  height: 829px;
+  height: 600px;
   position: relative;
   overflow: hidden;
 }
@@ -4151,7 +4151,7 @@ ymaps[class*=ground-pane] {
 
 .contacts_map__zoom_items {
   position: absolute;
-  top: 722px;
+  top: 493px;
   right: calc((100vw - 1640px) / 2);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5293,14 +5293,6 @@ ymaps[class*=ground-pane] {
 
   .detail_scheme__tooltip_text {
     font-size: 1.4rem;
-  }
-
-  .contacts_map_section {
-    height: 629px;
-  }
-
-  .contacts_map__zoom_items {
-    top: 522px;
   }
 
   .press_catalog__cards {
